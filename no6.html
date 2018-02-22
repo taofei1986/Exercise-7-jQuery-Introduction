@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Exercise 7: jQuery Introduction</title>
+    <style>
+        #content{
+            position: relative;
+        }
+        #content img{
+            display: block;
+            position: absolute;
+            top: 30px;
+        }
+    </style>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="js/jquery.easing.1.3.js"></script><!-- easing plug in -->
+    <script>
+        $(function(){////run fuction after loaded
+            "use strict";
+            let $img=$('#content').find('img');//define a varible link  with img
+            let $button=$('#content').find('button');//define a varible link  with button
+            let counter=0;//counter for click
+            $button.click(function(e){
+                e.preventDefault();
+                counter++;
+                let opacityValue=0.5;//opacity Value
+                if(counter%2===0){//even times opacity Value change to 1
+                    opacityValue=1;
+                    counter=0;//set back couter to 0, becasue of some error happened when out of range;
+                }
+                $img.animate({
+                    left : $( window ).width() -$img.width()- $img.offset().left-8,//image move to right side
+                    opacity : opacityValue,
+                },1500,'easeOutBack');//time and easing type 
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        <div id="content">
+            <img src="image/zebraLovers.jpg" alt="two zebra lovers"/> <!-- add image -->
+            <button type="button">Click Me!</button>
+        </div>
+    </form>
+</body>
+</html>

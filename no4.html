@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 7: jQuery Introduction</title>
+  <link rel="stylesheet" href="styles.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script>
+        $(function(){//run fuction after loaded
+            "use strict";
+            let $content=$('#content');// define a varible link  with id="content4" element;
+            $content.find('.group:nth-child(1)')//select first child div element
+                    .addClass('error')//add class
+                    .append('<p>Input error</p>');//add text message
+            $content.find('.group:nth-child(2)')
+                    .addClass('reuired')
+                    .append('<p>This field is required!</p>');                    
+            $content.find('.group:nth-child(3)')
+                    .addClass('goodChoice')
+                    .append('<p>Good Choice!</p>'); 
+        });
+    </script>
+</head>
+
+<body>
+  <div id="content">
+        <form id="my-form">
+            <div class="group">
+            <label>name:</label>
+            <input type="text" name="name" value="" placeholder="Your name">
+            </div>
+                        
+            <div class="group">
+            <label>phone number (required):</label>
+            <input type="text" name="phone" value="" placeholder="(xxx) xxx-xxxx">
+            </div>
+
+            <div class="group">
+            <label>favorite color:</label>
+            <input type="text" name="color" value="blue" placeholder="Personal choice, really!">
+            </div>
+        </form>
+  </div>
+</body>
+</html>

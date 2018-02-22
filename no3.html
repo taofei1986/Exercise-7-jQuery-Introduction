@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 7: jQuery Introduction</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script>
+    $(function(){//run fuction after loaded
+      "use strict";
+      let $content=$('#content');// define a varible link  with id="content3" element;
+      $content.click(function(){//click event
+        $(this).fadeOut(1000);// fade out in 1 second
+      });  
+    });
+  </script>
+</head>
+
+<body>
+  <div id="content">
+    <img src="image/zebraLovers.jpg" alt="two zebra lovers"/> <!-- add image -->
+  </div>
+</body>
+</html>
